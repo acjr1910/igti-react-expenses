@@ -4,9 +4,9 @@ export const useFetchExpenses = () => {
   const [isLoading, setIsLoading] = React.useState(true);
   const [expenses, setExpenses] = React.useState([]);
 
-  const fetchExpenses = React.useCallback(async (year = '2021', month = '01') => {
+  const fetchExpenses = React.useCallback(async (date) => {
     if (!isLoading) setIsLoading(true);
-    const URL = `http://localhost:3001/despesas?mes=${year}-${month}&_sort=dia`;
+    const URL = `http://localhost:3001/despesas?mes=${date}&_sort=dia`;
     fetch(URL).then((resp) => resp.json()).then((data) => setExpenses(data));
     setIsLoading(false);
     return;
