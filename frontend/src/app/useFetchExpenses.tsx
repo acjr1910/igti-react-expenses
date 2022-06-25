@@ -2,7 +2,7 @@ import React from 'react';
 
 export const useFetchExpenses = () => {
   const [isLoading, setIsLoading] = React.useState(true);
-  const [expenses, setExpenses] = React.useState(null);
+  const [expenses, setExpenses] = React.useState([]);
 
   const fetchExpenses = React.useCallback(async (year = '2021', month = '01') => {
     if (!isLoading) setIsLoading(true);
