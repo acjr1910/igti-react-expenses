@@ -3,4 +3,4 @@ export const INITIAL_DATE = {
   month: '01'
 }
 
-export const EXPENSES_URL_PATH = '/depesas/';
+export const EXPENSES_URL_PATH = '/despesas/';

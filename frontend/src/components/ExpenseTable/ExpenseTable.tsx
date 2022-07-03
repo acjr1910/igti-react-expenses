@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCreateTable } from './useCreateTable';
+import { useCreateTable, useCreateResumeTable } from './useCreateTable';
 import { Expense } from '../../shared/types';
 
 type ComponentProps = {
@@ -8,7 +8,14 @@ type ComponentProps = {
 
 const ExpenseTable = ({ expenses } : ComponentProps) => {
   const { Table } = useCreateTable(expenses);
-  return <Table />;
+  const { ResumeTable } = useCreateResumeTable(expenses);
+  return (
+    <div>
+      <ResumeTable />
+      <div style={{ margin: 40 }}></div>
+      <Table />
+    </div>
+  );
 }
 
 export default ExpenseTable
